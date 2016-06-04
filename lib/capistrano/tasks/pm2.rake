@@ -18,8 +18,13 @@ fs.writeFileSync('current/ecosystem.json', JSON.stringify(json, null, 2))
   end
 
   desc 'pm2 startOrRestart'
-  task startOrRestart: :ecosystem do
+  task restart: :ecosystem do
     pm2_execute :pm2, :startOrRestart, 'current/ecosystem.json'
+  end
+
+  desc 'pm2 startOrGracefulReload'
+  task reload: :ecosystem do
+    pm2_execute :pm2, :startOrGracefulReload, 'current/ecosystem.json'
   end
 
   desc 'pm2 stop'
@@ -30,11 +35,6 @@ fs.writeFileSync('current/ecosystem.json', JSON.stringify(json, null, 2))
   desc 'pm2 delete'
   task :delete do
     pm2_execute :pm2, :delete, 'current/ecosystem.json'
-  end
-
-  desc 'pm2 kill'
-  task :kill do
-    pm2_execute :pm2, :kill
   end
 
   desc 'pm2 list'
