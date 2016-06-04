@@ -32,10 +32,10 @@ Capistrano's default deploy.
 
 ```bash
 cap pm2:start
-cap pm2:startOrRestart
+cap pm2:restart
+cap pm2:reload
 cap pm2:stop
 cap pm2:delete
-cap pm2:kill
 cap pm2:list
 cap pm2:logs
 cap pm2:save
