@@ -55,7 +55,7 @@ fs.writeFileSync('current/ecosystem.json', JSON.stringify(json, null, 2))
   def pm2_execute(*args)
     on roles fetch(:pm2_roles) do
       within deploy_path do
-        execute *args
+        execute(*args)
       end
     end
   end
@@ -65,4 +65,4 @@ end
 set :pm2_roles, :all
 
 # Hooks
-after 'deploy:published', 'pm2:startOrRestart'
+after 'deploy:published', 'pm2:restart'
