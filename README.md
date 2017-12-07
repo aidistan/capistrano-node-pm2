@@ -1,4 +1,4 @@
-# Capistrano::pm2
+# Ruby Gem: Capistrano::pm2
 
 Node.js [pm2](http://pm2.keymetrics.io) support for Capistrano 3.x
 
